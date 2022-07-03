@@ -1,0 +1,52 @@
+import styled from "styled-components";
+
+export const StyledPopularCategories = styled.div`
+  width: 50%;
+  gap: 2rem;
+
+  img {
+    width: 20px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  button {
+    padding: 10px;
+    min-width: 150px;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+
+  button:hover {
+    background-color: #e75c62;
+    color: #fff;
+  }
+
+  p {
+    font-weight: 200;
+    font-size: 0.8rem;
+  }
+
+  .active-btn {
+    background-color: #e75c62;
+    color: #fff;
+  }
+
+  @media (max-width: 1300px) {
+    width: 90%;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+`;

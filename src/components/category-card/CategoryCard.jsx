@@ -1,7 +1,9 @@
+import { addDoc, collection } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
 import { FcBookmark } from "react-icons/fc";
 import { GrCircleAlert } from "react-icons/gr";
 import { ImBookmark } from "react-icons/im";
+import { auth, db } from "../../firebase/firebase-config";
 import { AppContext } from "../../helper/Context";
 
 function CategoryCard(props) {
@@ -13,29 +15,28 @@ function CategoryCard(props) {
   } = useContext(AppContext);
   const [clicked, setClicked] = useState(false);
   const [readMore, setReadMore] = useState(false);
-
-  const newBookmark = {
-    name: props.volumeInfo.title,
-    author: props.volumeInfo.authors,
-    img: "https://media.istockphoto.com/vectors/male-user-icon-vector-id517998264?k=20&m=517998264&s=612x612&w=0&h=pdEwtkJlZsIoYBVeO2Bo4jJN6lxOuifgjaH8uMIaHTU=",
-    // desc: descInfo,
-  };
-
-  // useEffect(() => {
-  //   const data = JSON.parse(window.localStorage.getItem("MY_BOOKMARKS_ARRAY"));
-  //   setHydratedBookmarkedCards(data);
-  // }, [clicked]);
-
-  const handleBookmarkToggle = () => {
-    setClicked(!clicked);
-    let bookm = [...hydratedBookmarkedCards, ...newBookmark];
-    setHydratedBookmarkedCards(bookm);
-  };
-
+  
+  let descInfo = props.volumeInfo && props.volumeInfo.description;
   let thumbnailer =
     props.volumeInfo.imageLinks && props.volumeInfo.imageLinks.thumbnail;
 
-  let descInfo = props.volumeInfo && props.volumeInfo.description;
+  const postsCollectionRef = collection(db, "bookmarks");
+
+  const createBoookmark = async () => {
+    let currentUser = auth.currentUser.displayName;
+    let currentUserId = auth.currentUser.uid;
+
+    await addDoc(postsCollectionRef, newBookmark);
+    setClicked(!clicked);
+
+    const newBookmark = {
+      name: props.volumeInfo.title,
+      author: props.volumeInfo.authors,
+      img: thumbnailer,
+      desc: descInfo,
+      user: { name: currentUser, id: currentUserId },
+    };
+  };
 
   if (thumbnailer !== undefined) {
     return (
@@ -44,7 +45,7 @@ function CategoryCard(props) {
           {clicked ? (
             <FcBookmark className="bookm" />
           ) : (
-            <ImBookmark className="bookmark" onClick={handleBookmarkToggle} />
+            <ImBookmark className="bookmark" onClick={createBoookmark} />
           )}
         </span>
         <img src={thumbnailer} alt="" />

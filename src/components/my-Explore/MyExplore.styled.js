@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMyExplore = styled.div`
-  /* overflow-x: auto; */
+  text-align: center;
+  display: grid;
+  place-content: center;
 `;

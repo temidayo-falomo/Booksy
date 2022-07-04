@@ -11,7 +11,7 @@ function Dashboard() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuth) {
+    if (!localStorage.getItem("username")) {
       navigate("/signin");
     }
   }, []);

@@ -13,6 +13,7 @@ export const StyledTopBook = styled.div`
   h4 {
     text-align: center;
     font-weight: 600;
+    max-width: 200px;
   }
 
   .book {

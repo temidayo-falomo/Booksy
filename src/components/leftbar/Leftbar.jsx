@@ -26,7 +26,6 @@ function Leftbar() {
       localStorage.clear();
       setIsAuth(false);
       navigate("/signin");
-      console.log("hello");
     });
   };
 
@@ -47,17 +46,17 @@ function Leftbar() {
           </li>
 
           <li>
-            <Tooltip title="Notifications">
-              <Link to="/notifications">
-                <RiNotification2Line />
+            <Tooltip title="Bookmarks">
+              <Link to="/bookmarks">
+                <RiBookmarkLine />
               </Link>
             </Tooltip>
           </li>
 
           <li>
-            <Tooltip title="Bookmarks">
-              <Link to="/bookmarks">
-                <RiBookmarkLine />
+            <Tooltip title="Notifications">
+              <Link to="/notifications">
+                <RiNotification2Line />
               </Link>
             </Tooltip>
           </li>
@@ -71,8 +70,8 @@ function Leftbar() {
           </li>
 
           <li>
-            <Tooltip title="Posts">
-              <Link to="/posts">
+            <Tooltip title="Timeline">
+              <Link to="/timeline">
                 <SiApostrophe />
               </Link>
             </Tooltip>

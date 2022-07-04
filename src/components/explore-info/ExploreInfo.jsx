@@ -1,12 +1,14 @@
-import React from 'react'
-import { StyledExploreInfo } from './ExploreInfo.styled'
+import React from "react";
+import { StyledExploreInfo } from "./ExploreInfo.styled";
 
 function ExploreInfo() {
   return (
     <StyledExploreInfo>
-        <h3>StyledExploreInfo</h3>
+      <h1>Explore!</h1>
+      <h4>Page In Progress...</h4>
+      <button className="button-81">Go Home</button>
     </StyledExploreInfo>
-  )
+  );
 }
 
-export default ExploreInfo
+export default ExploreInfo;

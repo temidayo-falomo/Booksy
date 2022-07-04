@@ -1,17 +1,30 @@
-import React, { useContext, useState } from "react";
-import { AppContext } from "../../helper/Context";
-import BookmarkCard from "../bookmark-card/BookmarkCard";
+import { collection, getDocs } from "firebase/firestore";
+import React, { useContext, useEffect, useState } from "react";
 import { StyledBookmarkInfo } from "./BookmarkInfo.styled";
+import { auth, db } from "../../firebase/firebase-config";
+import BookmarkCard from "../bookmark-card/BookmarkCard";
 
 function BookmarkInfo() {
-  const { bookmarkedCards, setBookMarkedCards, hydratedBookmarkedCards } =
-    useContext(AppContext);
+  const [bookList, setBookList] = useState([]);
+  const postsCollectionRef = collection(db, "bookmarks");
+
+  useEffect(() => {
+    const getBooks = async () => {
+      const data = await getDocs(postsCollectionRef);
+      setBookList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getBooks();
+  }, []);
 
   return (
     <StyledBookmarkInfo>
-      {hydratedBookmarkedCards.slice(0).reverse().map((data, index) => {
-        return <BookmarkCard key={index} {...data} index={index}/>;
-      })}
+      {bookList
+        .filter(function (item) {
+          return item.user.id === auth.currentUser.uid;
+        })
+        .map((data, index) => {
+          return <BookmarkCard key={index} {...data} index={index} />;
+        })}
     </StyledBookmarkInfo>
   );
 }

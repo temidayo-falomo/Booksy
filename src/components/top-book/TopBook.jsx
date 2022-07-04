@@ -5,60 +5,28 @@ import { StyledTopBook } from "./TopBook.styled";
 import { AppContext } from "../../helper/Context";
 import "react-tippy/dist/tippy.css";
 import { Tooltip } from "react-tippy";
-
-const colors = [
-  "#add1f1",
-  "#ccf2ae",
-  "#b7a5e8",
-  "#eeaad3",
-  "#FADBF2",
-  "#e29fc3",
-  "#d3a68c",
-];
+import { addDoc, collection } from "firebase/firestore";
+import { auth, db } from "../../firebase/firebase-config";
+import { colors } from "./Colors";
 
 function TopBook(props) {
-  const {
-    bookmarkedCards,
-    setBookMarkedCards,
-    setHydratedBookmarkedCards,
-    hydratedBookmarkedCards,
-  } = useContext(AppContext);
-
   const [clicked, setClicked] = useState(false);
+  const postsCollectionRef = collection(db, "bookmarks");
 
-  const handleBookmarkToggle = () => {
+  const createBookmark = async () => {
+    let currentUser = auth.currentUser.displayName;
+    let currentUserId = auth.currentUser.uid;
+
+    const newBookmark = {
+      name: props.title,
+      author: props.author,
+      img: props.book_image,
+      desc: props.description,
+      user: { name: currentUser, id: currentUserId },
+    };
+    
+    await addDoc(postsCollectionRef, newBookmark);
     setClicked(!clicked);
-    let bookm = [...bookmarkedCards, newBookmark];
-    setBookMarkedCards(bookm);
-  };
-
-  useEffect(() => {
-    window.localStorage.setItem(
-      "MY_BOOKMARKS_ARRAY",
-      JSON.stringify(bookmarkedCards)
-    );
-    window.localStorage.setItem("CLICK", clicked);
-  }, [clicked]);
-
-  useEffect(() => {
-    const data = JSON.parse(window.localStorage.getItem("MY_BOOKMARKS_ARRAY"));
-    setHydratedBookmarkedCards(data);
-  }, [clicked]);
-
-  const newBookmark = {
-    name: props.title,
-    author: props.author,
-    img: props.book_image,
-    desc: props.description,
-  };
-
-  const handleRemove = (param) => {
-    setClicked(!clicked);
-    setHydratedBookmarkedCards(
-      JSON.parse(window.localStorage.getItem("MY_BOOKMARKS_ARRAY")).filter(
-        (data) => data.author !== param
-      )
-    );
   };
 
   return (
@@ -74,12 +42,9 @@ function TopBook(props) {
         <div className="book col">
           <span>
             {clicked ? (
-              <FcBookmark
-                className="bookm"
-                onClick={() => handleRemove(props.author)}
-              />
+              <FcBookmark className="bookm" />
             ) : (
-              <ImBookmark className="bookmark" onClick={handleBookmarkToggle} />
+              <ImBookmark className="bookmark" onClick={createBookmark} />
             )}
           </span>
           <img src={props.book_image} alt="" />

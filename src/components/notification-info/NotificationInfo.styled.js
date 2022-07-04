@@ -14,14 +14,10 @@ export const StyledNotificationInfo = styled.div`
     font-weight: 500;
   }
 
-  /* p {
-    width: 80%;
-  } */
-
   .notification-card {
     padding: 1rem;
-    width: 70%;
-    margin-left: 2rem;
+    width: auto;
+    margin: 0 1.8rem;
     gap: 2rem;
     background-color: #fff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -30,8 +26,8 @@ export const StyledNotificationInfo = styled.div`
   }
 
   .logo-circle {
-    width: 80px;
-    height: 80px;
+    min-width: 70px;
+    min-height: 70px;
     background-color: #f0f4ff;
     display: grid;
     place-content: center;
@@ -41,6 +37,7 @@ export const StyledNotificationInfo = styled.div`
 
   .logo-circle img {
     width: 50%;
+    height: 50%;
     position: absolute;
     margin: auto;
     top: 0;
@@ -62,6 +59,12 @@ export const StyledNotificationInfo = styled.div`
     font-size: 1.5rem;
     color: green;
     cursor: pointer;
+  }
+
+  @media(max-width: 600px) {
+    .logo-circle {
+      display: none;
+    }
   }
 
 

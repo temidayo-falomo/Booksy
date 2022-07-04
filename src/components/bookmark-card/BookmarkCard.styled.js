@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledBookmarkCard = styled.div`
-  border: 2px black solid;
+  border: 1px black solid;
   padding: 20px;
   width: 400px;
   min-height: 300px;
@@ -19,5 +19,6 @@ export const StyledBookmarkCard = styled.div`
     right: .5rem;
     font-size: 2.5rem;
     cursor: pointer;
+    fill: red;
   }
 `

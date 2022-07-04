@@ -33,7 +33,6 @@ function NotificationInfo() {
             <MdOutlineToday />
           </h5>
         </div>
-        <AiFillCheckCircle className="dot" />
       </div>
       {notifications.map((notif, index) => {
         return (
@@ -48,7 +47,6 @@ function NotificationInfo() {
                 <MdOutlineToday />
               </h5>
             </div>
-            <AiFillCheckCircle className="dot" />
           </div>
         );
       })}

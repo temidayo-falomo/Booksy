@@ -1,17 +1,51 @@
+import { addDoc, collection } from "firebase/firestore";
 import React, { useState } from "react";
+import { FcBookmark } from "react-icons/fc";
 import { GrCircleAlert } from "react-icons/gr";
+import { ImBookmark } from "react-icons/im";
+import { auth, db } from "../../firebase/firebase-config";
 import { StyledSearchCard } from "./SearchCard.styledd";
 
 function SearchCard(props) {
   const [readMore, setReadMore] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  let thumbnailer =
+    props.volumeInfo.imageLinks && props.volumeInfo.imageLinks.thumbnail;
 
   let descInfo = props.volumeInfo && props.volumeInfo.description;
   let bookTitle = props.volumeInfo && props.volumeInfo.title;
   let authorName = props.volumeInfo && props.volumeInfo.authors;
 
+  const postsCollectionRef = collection(db, "bookmarks");
+
+  let currentUser = auth.currentUser.displayName;
+  let currentUserId = auth.currentUser.uid;
+
+  const createBoookmark = async () => {
+    await addDoc(postsCollectionRef, newBookmark);
+    setClicked(!clicked);
+  };
+
+  const newBookmark = {
+    name: props.volumeInfo.title,
+    author: props.volumeInfo.authors,
+    img: thumbnailer,
+    desc: descInfo,
+    user: { name: currentUser, id: currentUserId },
+  };
+
+  
+
   return (
     <>
       <StyledSearchCard className="row">
+      <span className="bkm">
+          {clicked ? (
+            <FcBookmark className="bookm" />
+          ) : (
+            <ImBookmark className="bookmark" onClick={createBoookmark} />
+          )}
+        </span>
         <img
           src={
             props.volumeInfo.imageLinks === undefined

@@ -9,6 +9,7 @@ import Notifications from "./pages/notifications/Notifications";
 import Bookmarks from "./pages/bookmarks/Bookmarks";
 import Explore from "./pages/explore/Explore";
 import LoadingPage from "./pages/loading-page/LoadingPage";
+import Timeline from "./pages/timeline/Timeline";
 
 function App() {
   const [searchList, setSearchList] = useState([]);
@@ -17,12 +18,8 @@ function App() {
   const [categoriesArray, setCategoriesArray] = useState([]);
   const [subject, setSubject] = useState("Action");
   const [hydratedSubject, setHydratedSubject] = useState("");
-  const [bookmarkedCards, setBookMarkedCards] = useState(
-    JSON.parse(window.localStorage.getItem("MY_BOOKMARKS_ARRAY")) || []
-  );
-  const [hydratedBookmarkedCards, setHydratedBookmarkedCards] = useState(
-    JSON.parse(window.localStorage.getItem("MY_BOOKMARKS_ARRAY"))
-  );
+  const [bookmarkedCards, setBookMarkedCards] = useState([]);
+  const [hydratedBookmarkedCards, setHydratedBookmarkedCards] = useState([]);
   const [isAuth, setIsAuth] = useState(false);
   const [apiLoading, setApiLoading] = useState(true);
   const [maxResults, setMaxResults] = useState(12);
@@ -60,6 +57,10 @@ function App() {
       .catch();
   }, [searchTerm, maxResults]);
 
+  // useEffect(()=> {
+  //   localStorage.setItem("isAuth", false);
+  // }, [])
+
   if (apiLoading) {
     return <LoadingPage />;
   }
@@ -94,6 +95,7 @@ function App() {
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/bookmarks" element={<Bookmarks />} />
           <Route path="/explore" element={<Explore />} />
+          <Route path="/timeline" element={<Timeline />} />
         </Routes>
       </div>
     </AppContext.Provider>

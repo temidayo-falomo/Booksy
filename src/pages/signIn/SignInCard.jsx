@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { StyledCard } from "../../components/styled-reuseables/Card.styled";
 import { AppContext } from "../../helper/Context";
 import { auth, provider } from "../../firebase/firebase-config";
@@ -9,7 +9,7 @@ import { signInWithPopup } from "firebase/auth";
 function SignUpCard(props) {
   let navigate = useNavigate();
 
-  const { isAuth, setIsAuth } = useContext(AppContext);
+  const { setIsAuth } = useContext(AppContext);
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then((res) => {
@@ -22,6 +22,7 @@ function SignUpCard(props) {
       localStorage.setItem("username", userName);
     });
   };
+
   return (
     <StyledCard>
       <div className="card-col col">

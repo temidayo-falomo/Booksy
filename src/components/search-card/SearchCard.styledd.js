@@ -5,16 +5,17 @@ export const StyledSearchCard = styled.div`
   min-height: 250px;
   width: 600px;
   border-top-right-radius: 30px;
-  background-color: #F0F4FF;
+  background-color: #f0f4ff;
   gap: 1rem;
   align-items: flex-start;
+  position: relative;
 
   .col {
-    gap: .5rem;
+    gap: 0.5rem;
   }
 
   .row {
-    gap: .5rem;
+    gap: 0.5rem;
   }
 
   h3 {
@@ -28,7 +29,7 @@ export const StyledSearchCard = styled.div`
 
   p {
     font-weight: 200;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   button {
@@ -37,4 +38,21 @@ export const StyledSearchCard = styled.div`
     color: #fff;
   }
 
-`
+  .bkm {
+    position: absolute;
+    right: 1rem;
+    /* top: .2rem; */
+  }
+
+  .bookmark {
+    font-size: 2rem;
+    fill: white;
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  .bookm {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+`;

@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const StyledLeftbar = styled.div`
-   height: 80vh;
+   height: 100vh;
    padding: 2%;
    align-items: center;
    justify-content: space-between;
    font-size: 2rem;
-   margin-top: 1rem;
+   padding-top: 2rem;
+   background-color: #fff;
+   padding-bottom: 4rem;
+   border-right: 2px #F0F4FF solid;
 
    .logo {
     margin-bottom: 50px;

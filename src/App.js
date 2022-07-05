@@ -62,6 +62,11 @@ function App() {
     return <LoadingPage />;
   }
 
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [searchTerm]);
+
+
   return (
     <AppContext.Provider
       value={{

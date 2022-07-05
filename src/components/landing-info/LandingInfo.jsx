@@ -10,8 +10,8 @@ function LandingInfo() {
   const breakPoints = [
     { width: 450, itemsToShow: 1 },
     { width: 500, itemsToShow: 1 },
-    { width: 800, itemsToShow: 2 },
-    { width: 1200, itemsToShow: 2 },
+    { width: 900, itemsToShow: 2 },
+    { width: 1200, itemsToShow: 3 },
   ];
   const { fictionBooksArray } = useContext(AppContext);
 

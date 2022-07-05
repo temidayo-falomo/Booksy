@@ -41,7 +41,6 @@ export const StyledSearchCard = styled.div`
   .bkm {
     position: absolute;
     right: 1rem;
-    /* top: .2rem; */
   }
 
   .bookmark {
@@ -54,5 +53,10 @@ export const StyledSearchCard = styled.div`
   .bookm {
     font-size: 2.5rem;
     cursor: pointer;
+  }
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledBar = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin: 0 auto;
   padding: 20px;
@@ -18,7 +19,7 @@ export const StyledBar = styled.div`
 
   input {
     width: 550px;
-    padding: 5px 10px;
+    padding: 10px 10px;
     border: none;
     background-color: #f6f6f6;
     border-radius: 5px;

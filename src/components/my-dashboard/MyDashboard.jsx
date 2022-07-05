@@ -20,7 +20,7 @@ function MyDashboard() {
   return (
     <StyledMyDashboard>
       <StyledBar>
-        <h1>My Dashboard</h1>
+        <h1 id="view">My Dashboard</h1>
         <input
           type="search"
           placeholder="Search book titles, authors, publishers..."

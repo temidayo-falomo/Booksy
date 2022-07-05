@@ -18,7 +18,7 @@ export const StyledLeftbar = styled.div`
 
   .hamburger {
     position: absolute;
-    top: 2.2rem;
+    top: 1.5rem;
     right: 1rem;
     margin: auto 0;
     display: none;
@@ -65,7 +65,7 @@ export const StyledLeftbar = styled.div`
   }
 
   @media (max-width: 500px) {
-    height: 7rem;
+    height: 5.5rem;
     padding-top: 1.5rem;
     padding-bottom: 0;
     border-right: 0;
@@ -91,6 +91,7 @@ export const StyledLeftbar = styled.div`
       justify-self: flex-start;
       align-self: flex-start;
       margin-left: 20px;
+      width: 40px;
     }
 
     .hamburger {

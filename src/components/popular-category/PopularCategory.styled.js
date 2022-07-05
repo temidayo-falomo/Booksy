@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledPopularCategory = styled.div`
   width: 70%;
   gap: 1rem;
+  margin-bottom: 1rem;
 
   h3 {
     margin-bottom: 1rem;

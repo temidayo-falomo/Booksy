@@ -35,7 +35,11 @@ function Leftbar() {
   return (
     <StyledLeftbar className={click ? "active-leftbar col" : "col"}>
       <div className="hamburger" onClick={() => setClick(!click)}>
-        {click ? <GrFormClose /> : <GiHamburgerMenu />}
+        {click ? (
+          <GrFormClose style={{ fontSize: "2rem" }} />
+        ) : (
+          <GiHamburgerMenu style={{ fontSize: "1.5rem" }} />
+        )}
       </div>
       <div className="leftbar-top col">
         <div className="logo-div">

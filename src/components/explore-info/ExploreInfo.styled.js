@@ -1,30 +1,29 @@
 import styled from "styled-components";
 
 export const StyledExploreInfo = styled.div`
+  margin: auto;
+
   h1 {
-    font-size: 8rem;
+    font-size: 7vw;
     color: whitesmoke;
   }
 
   h4 {
     font-size: 2.5rem;
-    width: 80%;
+    width: 100%;
     text-align: center;
     margin: 0 auto;
     color: whitesmoke;
   }
 
   .button-81 {
-    background-color: #1e293b;
+    background-color: #fff;
     border: 0 solid #e2e8f0;
     border-radius: 1.5rem;
     box-sizing: border-box;
-    color: #fff;
+    color: #1e293b;
     cursor: pointer;
     display: inline-block;
-    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1;
@@ -41,7 +40,7 @@ export const StyledExploreInfo = styled.div`
   }
 
   .button-81:hover {
-    background-color: wheat;
+    background-color: #1e293b;
     color: #fff;
   }
 

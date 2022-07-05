@@ -55,7 +55,7 @@ function CategoryCard(props) {
           ) : (
             <p style={{ display: "inline-flex", alignItems: "center" }}>
               <GrCircleAlert />
-              There is currently no information on this book...
+              This book's information is incomplete!
             </p>
           )}
         </div>

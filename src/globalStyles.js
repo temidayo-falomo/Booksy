@@ -56,5 +56,12 @@ const GlobalStyle = createGlobalStyle`
     height: 70%;
   }
 
+  .active-leftbar {
+      height: 100vh !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.76);
+      overflow-y: auto !important;;
+      transition: .5s all ease;
+    }
+
 `;
 export default GlobalStyle;

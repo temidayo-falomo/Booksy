@@ -53,12 +53,11 @@ export const StyledPopularCategory = styled.div`
   .bkm {
     position: absolute;
     right: 1rem;
-    /* top: .2rem; */
   }
 
   .bookmark {
     font-size: 2rem;
-    fill: white ;
+    fill: white;
     cursor: pointer;
   }
 
@@ -73,7 +72,17 @@ export const StyledPopularCategory = styled.div`
     background-color: #1bc1ff;
   }
 
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     width: 100%;
+  }
+
+  @media (max-width: 450px) {
+    h3 {
+      text-align: center;
+    }
+    .category-card {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;

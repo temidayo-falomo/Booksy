@@ -6,6 +6,5 @@ export const StyledBookmarkInfo = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  overflow: auto !important;
   height: 90vh;
 `;

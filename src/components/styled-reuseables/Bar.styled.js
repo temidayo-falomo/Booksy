@@ -27,7 +27,7 @@ export const StyledBar = styled.div`
     letter-spacing: 0.0125rem;
   }
 
-  @media(max-width: 700px) {
+  @media (max-width: 700px) {
     flex-direction: column;
     gap: 1rem;
     width: 100%;
@@ -35,5 +35,10 @@ export const StyledBar = styled.div`
     input {
       width: 100%;
     }
+  }
+
+  @media (max-width: 500px) {
+    position: relative;
+    margin-top: 7rem;
   }
 `;

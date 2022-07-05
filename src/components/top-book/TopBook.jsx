@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { ImBookmark } from "react-icons/im";
 import { FcBookmark } from "react-icons/fc";
 import { StyledTopBook } from "./TopBook.styled";
-import { AppContext } from "../../helper/Context";
 import "react-tippy/dist/tippy.css";
 import { Tooltip } from "react-tippy";
 import { addDoc, collection } from "firebase/firestore";
@@ -24,7 +23,7 @@ function TopBook(props) {
       desc: props.description,
       user: { name: currentUser, id: currentUserId },
     };
-    
+
     await addDoc(postsCollectionRef, newBookmark);
     setClicked(!clicked);
   };
@@ -33,9 +32,9 @@ function TopBook(props) {
     <Tooltip title={props.description}>
       <StyledTopBook>
         <h1
-          style={{
-            color: `${colors[Math.floor(Math.random() * colors.length)]}`,
-          }}
+          // style={{
+          //   color: `${colors[Math.floor(Math.random() * colors.length)]}`,
+          // }}
         >
           {props.index + 1}
         </h1>

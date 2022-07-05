@@ -50,6 +50,8 @@ export const StyledLandingInfo = styled.div`
   .top-part {
     margin-bottom: 4rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
     padding-top: 2rem;
   }
@@ -59,6 +61,11 @@ export const StyledLandingInfo = styled.div`
     width: 100%;
     gap: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .slider {
+    /* border: 2px green solid; */
+
   }
 
   @media(max-width: 1300px) {

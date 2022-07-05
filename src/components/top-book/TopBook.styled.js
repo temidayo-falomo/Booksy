@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const StyledTopBook = styled.div`
   display: flex;
   align-items: center;
-  min-width: 300px;
+  gap: -1rem;
+  /* min-width: 300px; */
 
   h1 {
     font-size: 15rem;
+    color: var(--dark-blue);
     margin-right: -20px;
   }
 
@@ -18,6 +20,8 @@ export const StyledTopBook = styled.div`
 
   .book {
     position: relative;
+    margin: auto;
+    align-items: center;
   }
 
   .book img {
@@ -44,5 +48,18 @@ export const StyledTopBook = styled.div`
 
   .col {
     gap: 1rem;
+  }
+
+  @media(max-width: 450px) {
+    width: 250px;
+
+    h1 {
+      font-size:8rem;
+      margin: 0;
+    }
+
+    .book img {
+      width: 150px;
+    }
   }
 `;

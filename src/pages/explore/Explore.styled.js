@@ -10,9 +10,12 @@ export const StyledExplore = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
-  #bg-vid {
-    position: absolute;
-    z-index: -1;
-    min-height: 100vh;
+  @media (max-width: 1300px) {
+    grid-template-columns: 100px auto;
+  }
+
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
   }
 `;

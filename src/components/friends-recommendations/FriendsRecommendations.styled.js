@@ -9,6 +9,9 @@ export const StyledFriendsRecommendations = styled.div`
   gap: 1rem;
   overflow: auto;
   border-top: 2px #f0f4ff solid;
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
 
   h4 {
     margin-bottom: 1rem;
@@ -54,8 +57,8 @@ export const StyledFriendsRecommendations = styled.div`
     height: 0;
     margin: 8px;
     box-sizing: border-box;
-    border: 32px solid #1DC0FF;
-    border-color: #1DC0FF transparent #1DC0FF transparent;
+    border: 32px solid #1dc0ff;
+    border-color: #1dc0ff transparent #1dc0ff transparent;
     animation: lds-hourglass 1.2s infinite;
   }
   @keyframes lds-hourglass {

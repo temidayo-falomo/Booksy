@@ -8,13 +8,8 @@ function RightBar() {
   const [hideDrop, setHideDrop] = useState(false);
 
   return (
-    <StyledRightBar className={hideDrop ? 'showDrop' : 'hideDrop'}>
+    <StyledRightBar className={hideDrop ? "showDrop" : "hideDrop"}>
       <div className="row">
-        {/* <img src="./assets/icons/online.svg" alt="" style={{width: '200px', padding: '5px'}}/>
-        <BsChevronDoubleDown
-          className="down-btn"
-          onClick={() => setHideDrop(!hideDrop)}
-        /> */}
         <h2>Online Users</h2>
       </div>
       <FriendsRecommendations

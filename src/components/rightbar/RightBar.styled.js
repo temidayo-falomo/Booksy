@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledRightBar = styled.div`
-  /* border-left: 2px royalblue solid; */
 
   h2 {
     padding: 20px;
@@ -11,19 +10,12 @@ export const StyledRightBar = styled.div`
     font-weight: 200;
   }
 
-  /* .row {
-    justify-content: space-between;
-    align-items: center;
-    width: 95%;
-    margin: 0 auto;
-  } */
-
   .down {
     font-weight: 800;
     font-size: 1.5rem;
   }
 
-  @media(max-width: 1300px) {
+  @media (max-width: 1300px) {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -35,4 +27,4 @@ export const StyledRightBar = styled.div`
     border: 2px black solid;
     display: none;
   }
-`
+`;

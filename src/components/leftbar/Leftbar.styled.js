@@ -84,8 +84,7 @@ export const StyledLeftbar = styled.div`
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(11.1px);
     -webkit-backdrop-filter: blur(11.1px);
-    transition: .2s all ease;
-    
+    transition: 0.2s all ease;
 
     .logo-div {
       justify-self: flex-start;

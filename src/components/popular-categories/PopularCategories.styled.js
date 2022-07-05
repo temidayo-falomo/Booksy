@@ -17,11 +17,14 @@ export const StyledPopularCategories = styled.div`
   }
 
   button {
+  }
+
+  .normal-btn {
+    background-color: transparent;
     padding: 10px;
     min-width: 150px;
     border-radius: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    background-color: var(--background);
     display: flex;
     align-items: center;
     justify-content: center;

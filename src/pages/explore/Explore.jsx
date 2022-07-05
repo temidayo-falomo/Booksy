@@ -9,16 +9,14 @@ function Explore() {
   const { isAuth } = useContext(AppContext);
   let navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!isAuth) {
-  //     navigate("/signin");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (!localStorage.getItem("username")) {
+      navigate("/signin");
+    }
+  }, []);
+  
   return (
     <StyledExplore>
-      {/* <video autoPlay loop muted id="bg-vid">
-        <source src="./assets/pexels-rodnae-productions-8499706.mp4" type="video/mp4" />
-      </video> */}
       <Leftbar />
       <MyExplore />
     </StyledExplore>

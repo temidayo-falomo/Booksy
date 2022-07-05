@@ -67,6 +67,12 @@ export const StyledPopularCategory = styled.div`
     cursor: pointer;
   }
 
+  .view-more-category {
+    padding: 10px 5px;
+    color: #fff;
+    background-color: #1bc1ff;
+  }
+
   @media(max-width: 900px) {
     width: 100%;
   }

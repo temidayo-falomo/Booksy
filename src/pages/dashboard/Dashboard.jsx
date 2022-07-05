@@ -7,13 +7,17 @@ import { AppContext } from "../../helper/Context";
 import { StyledDashboard } from "./Dashboard.styled";
 
 function Dashboard() {
-  const { isAuth } = useContext(AppContext);
+  const { isAuth, setSubject } = useContext(AppContext);
   let navigate = useNavigate();
 
   useEffect(() => {
     if (!localStorage.getItem("username")) {
       navigate("/signin");
     }
+  }, []);
+
+  useEffect(() => {
+    setSubject("Action");
   }, []);
 
   return (

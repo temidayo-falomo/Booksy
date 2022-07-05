@@ -10,11 +10,11 @@ function Notifications() {
   const { isAuth } = useContext(AppContext);
   let navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!isAuth) {
-  //     navigate("/signin");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (!localStorage.getItem("username")) {
+      navigate("/signin");
+    }
+  }, []);
   
   return (
     <StyledNotifications>

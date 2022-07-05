@@ -5,4 +5,5 @@ export const StyledFeedCard = styled.div`
   width: 60%;
   border: 2px black solid;
   margin: 0 auto;
+  padding: 20px;
 `

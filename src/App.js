@@ -23,6 +23,7 @@ function App() {
   const [isAuth, setIsAuth] = useState(false);
   const [apiLoading, setApiLoading] = useState(true);
   const [maxResults, setMaxResults] = useState(12);
+  const [visibleCategoryBooks, setVisibleCategoryBooks] = useState(4);
 
   useEffect(() => {
     Axios.get(
@@ -57,10 +58,6 @@ function App() {
       .catch();
   }, [searchTerm, maxResults]);
 
-  // useEffect(()=> {
-  //   localStorage.setItem("isAuth", false);
-  // }, [])
-
   if (apiLoading) {
     return <LoadingPage />;
   }
@@ -85,6 +82,8 @@ function App() {
         setSearchTerm,
         maxResults,
         setMaxResults,
+        visibleCategoryBooks,
+        setVisibleCategoryBooks,
       }}
     >
       <div className="App">

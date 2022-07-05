@@ -18,28 +18,26 @@ function SearchCard(props) {
 
   const postsCollectionRef = collection(db, "bookmarks");
 
-  let currentUser = auth.currentUser.displayName;
-  let currentUserId = auth.currentUser.uid;
-
   const createBoookmark = async () => {
+    let currentUser = auth.currentUser.displayName;
+    let currentUserId = auth.currentUser.uid;
+
+    const newBookmark = {
+      name: props.volumeInfo.title,
+      author: props.volumeInfo.authors,
+      img: thumbnailer,
+      desc: descInfo,
+      user: { name: currentUser, id: currentUserId },
+    };
+
     await addDoc(postsCollectionRef, newBookmark);
     setClicked(!clicked);
   };
 
-  const newBookmark = {
-    name: props.volumeInfo.title,
-    author: props.volumeInfo.authors,
-    img: thumbnailer,
-    desc: descInfo,
-    user: { name: currentUser, id: currentUserId },
-  };
-
-  
-
   return (
     <>
       <StyledSearchCard className="row">
-      <span className="bkm">
+        <span className="bkm">
           {clicked ? (
             <FcBookmark className="bookm" />
           ) : (

@@ -58,6 +58,7 @@ export const StyledLandingInfo = styled.div`
     display: flex;
     width: 100%;
     gap: 1rem;
+    padding-bottom: 1rem;
   }
 
   @media(max-width: 1300px) {

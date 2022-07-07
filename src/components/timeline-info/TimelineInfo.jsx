@@ -7,14 +7,16 @@ import { StyledMyTimelineInfo } from "./TimelineInfo.styled";
 function TimelineInfo() {
   return (
     <StyledMyTimelineInfo className="row">
-      {/* <PostFeedCard /> */}
+      <div className="pf-abs">
+        <PostFeedCard />
+      </div>
       <FeedCard />
       <FeedCard />
       <FeedCard />
       <FeedCard />
       <FeedCard />
       <FeedCard />
-      <AiFillPlusCircle className="add-btn"/>
+      <AiFillPlusCircle className="add-btn" />
     </StyledMyTimelineInfo>
   );
 }

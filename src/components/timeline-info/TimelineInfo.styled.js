@@ -4,6 +4,7 @@ export const StyledMyTimelineInfo = styled.div`
 position: relative;
   height: 90vh;
   padding: 0 20px;
+  overflow-x: hidden;
   overflow-y: auto;
   gap: 1rem;
   flex-wrap: wrap;
@@ -12,10 +13,20 @@ position: relative;
 
   .add-btn {
     font-size: 3rem;
-    position: absolute;
+    position: fixed;
     bottom: 5rem;
-    right: 50%;
-    left: 50%;
     cursor: pointer;
+  }
+
+  .pf-abs {
+    position: fixed;
+    bottom: 10rem;
+    width:400px;
+    min-height: 400px;
+    margin: 0 auto;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    border: 2px aliceblue solid;
   }
 `;

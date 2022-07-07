@@ -6,7 +6,7 @@ function PostFeedCard() {
     <StyledPostFeedCard className="col">
       <input type="text" placeholder="Book Title.."/>
       <input type="text" placeholder="Author.."/>
-      <textarea name="" id="" ></textarea>
+      <textarea name="" id="" cols="30" rows="30"></textarea>
       <button>Post</button>
     </StyledPostFeedCard>
   );

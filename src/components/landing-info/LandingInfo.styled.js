@@ -10,7 +10,7 @@ export const StyledLandingInfo = styled.div`
   }
 
   .rec-dot_active {
-    background-color: #E75C62 !important;
+    background-color: #0D266B !important;
     box-shadow: 0 0 1px 3px #E75C62 !important;
   }
   .rec-dot:focus,
@@ -19,7 +19,7 @@ export const StyledLandingInfo = styled.div`
   }
   .rec-dot_active:focus,
   .rec-dot_active:hover {
-    background-color: #E75C62 !important;
+    background-color: #0D266B !important;
     box-shadow: 0 0 1px 3px #E75C62 !important;
   }
 

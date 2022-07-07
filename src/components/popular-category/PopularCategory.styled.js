@@ -71,6 +71,7 @@ export const StyledPopularCategory = styled.div`
     padding: 10px 5px;
     color: #fff;
     background-color: #1bc1ff;
+    border-top-right-radius: 10px;
   }
 
   @media (max-width: 900px) {

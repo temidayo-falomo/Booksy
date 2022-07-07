@@ -9,14 +9,9 @@ import { Tooltip } from "react-tippy";
 function BookmarkCard(props) {
   const { isAuth } = useContext(AppContext);
 
-  const [clicked, setClicked] = useState(false);
-
-  useEffect(() => {}, [clicked]);
-
   const deleteBookmark = async (param) => {
     const postDoc = doc(db, "bookmarks", param);
     await deleteDoc(postDoc);
-    window.location.reload();
   };
 
   return (

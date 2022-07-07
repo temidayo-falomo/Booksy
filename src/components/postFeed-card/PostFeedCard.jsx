@@ -1,12 +1,15 @@
-import React from 'react'
-import { StyledPostFeedCard } from './PostFeedCard.styled'
+import React from "react";
+import { StyledPostFeedCard } from "./PostFeedCard.styled";
 
 function PostFeedCard() {
   return (
-    <StyledPostFeedCard>
-      <h3>Post Feed Card</h3>
+    <StyledPostFeedCard className="col">
+      <input type="text" placeholder="Book Title.."/>
+      <input type="text" placeholder="Author.."/>
+      <textarea name="" id="" ></textarea>
+      <button>Post</button>
     </StyledPostFeedCard>
-  )
+  );
 }
 
-export default PostFeedCard
+export default PostFeedCard;

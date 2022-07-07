@@ -60,21 +60,30 @@ const GlobalStyle = createGlobalStyle`
   .active-leftbar {
       height: 100vh !important;
       border-bottom: 1px solid rgba(255, 255, 255, 0.76);
-      overflow-y: auto !important;;
+      overflow-y: auto !important;
       transition: .5s all ease;
     }
 
-    ::-webkit-scrollbar {
-  width: 0.7em;
-}
+    .active-leftbar::-webkit-scrollbar {
+    width: 0;
+   }
 
-::-webkit-scrollbar-track {
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+
+   ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(113, 112, 112, 0.3);
-}
+   }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #0D266B;
-  border-radius: 20px;
+/* From https://css.glass */
+background: #0D266B;
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 

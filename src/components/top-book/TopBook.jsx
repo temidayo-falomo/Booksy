@@ -32,9 +32,9 @@ function TopBook(props) {
     <Tooltip title={props.description}>
       <StyledTopBook>
         <h1
-          // style={{
-          //   color: `${colors[Math.floor(Math.random() * colors.length)]}`,
-          // }}
+        // style={{
+        //   color: `${colors[Math.floor(Math.random() * colors.length)]}`,
+        // }}
         >
           {props.index + 1}
         </h1>

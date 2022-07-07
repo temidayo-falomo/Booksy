@@ -5,8 +5,13 @@ import { StyledMyTimelineInfo } from "./TimelineInfo.styled";
 
 function TimelineInfo() {
   return (
-    <StyledMyTimelineInfo>
+    <StyledMyTimelineInfo className="row">
       <PostFeedCard />
+      <FeedCard />
+      <FeedCard />
+      <FeedCard />
+      <FeedCard />
+      <FeedCard />
       <FeedCard />
     </StyledMyTimelineInfo>
   );

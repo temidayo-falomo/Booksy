@@ -11,7 +11,7 @@ function SearchInfo() {
       <h4 style={{ padding: "20px" }}>Results</h4>
       <StyledSearchInfo>
         {searchList.map((term, index) => {
-          return <SearchCard key={index} {...term} />;
+          return <SearchCard key={term.id} {...term} />;
         })}
       </StyledSearchInfo>
       <button

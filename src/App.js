@@ -48,6 +48,8 @@ function App() {
     setHydratedSubject(subject);
   }, [subject]);
 
+  console.log(categoriesArray);
+
   useEffect(() => {
     Axios.get(
       `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=${maxResults}&key=AIzaSyDDwLWhfPGhaLnooQRSNrMSI5qVh3QUEzU`
@@ -65,7 +67,6 @@ function App() {
   // useEffect(() => {
   //   window.scrollTo(0, 0);
   // }, [searchTerm]);
-
 
   return (
     <AppContext.Provider

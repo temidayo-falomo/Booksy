@@ -22,7 +22,7 @@ function PopularCategory() {
     <StyledPopularCategory className="col">
       <h3>{hydratedSubject} Category</h3>
       {categoriesArray.slice(0, visibleCategoryBooks).map((item, index) => {
-        return <CategoryCard key={index} {...item} />;
+        return <CategoryCard key={item.id} {...item} />;
       })}
       {visibleCategoryBooks <= 40 ? (
         <button className="view-more-category" onClick={handleExtraBooks}>

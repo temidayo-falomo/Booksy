@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledPostFeedCard = styled.div`
-  min-height: 300px;
+  /* min-height: 300px; */
   width: 500px;
   padding: 20px;
   border-radius: 16px;

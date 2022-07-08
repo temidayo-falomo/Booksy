@@ -9,10 +9,10 @@ import { StyledMyTimelineInfo } from "./TimelineInfo.styled";
 function TimelineInfo() {
   const [clicked, setClicked] = useState(false);
   const [feedList, setFeedList] = useState([]);
-  const postsCollectionRef = collection(db, "posts");
-  const q = query(postsCollectionRef, orderBy("createdAt", "desc"));
 
   useEffect(() => {
+    const postsCollectionRef = collection(db, "posts");
+    const q = query(postsCollectionRef, orderBy("createdAt", "desc"));
     onSnapshot(q, (snapshot) => {
       const posts = snapshot.docs.map((doc) => ({
         id: doc.id,

@@ -1,13 +1,11 @@
 import { deleteDoc, doc } from "firebase/firestore";
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { MdOutlineBookmarkRemove } from "react-icons/md";
-import { auth, db } from "../../firebase/firebase-config";
-import { AppContext } from "../../helper/Context";
+import { db } from "../../firebase/firebase-config";
 import { StyledBookmarkCard } from "./BookmarkCard.styled";
 import { Tooltip } from "react-tippy";
 
 function BookmarkCard(props) {
-  const { isAuth } = useContext(AppContext);
 
   const deleteBookmark = async (param) => {
     const postDoc = doc(db, "bookmarks", param);

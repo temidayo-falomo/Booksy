@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../../helper/Context";
 
 import CategoryCard from "../category-card/CategoryCard";
@@ -8,7 +8,6 @@ import { StyledPopularCategory } from "./PopularCategory.styled";
 function PopularCategory() {
   const {
     categoriesArray,
-    subject,
     hydratedSubject,
     visibleCategoryBooks,
     setVisibleCategoryBooks,
@@ -20,7 +19,7 @@ function PopularCategory() {
 
   return (
     <StyledPopularCategory className="col">
-      <h3>{hydratedSubject} Category</h3>
+      <h3>{hydratedSubject} Books</h3>
       {categoriesArray.slice(0, visibleCategoryBooks).map((item, index) => {
         return <CategoryCard key={item.id} {...item} />;
       })}

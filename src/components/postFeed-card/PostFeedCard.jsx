@@ -1,5 +1,5 @@
 import { addDoc, collection } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { auth, db } from "../../firebase/firebase-config";
 import { StyledPostFeedCard } from "./PostFeedCard.styled";
 

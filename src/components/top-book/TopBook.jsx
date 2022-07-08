@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ImBookmark } from "react-icons/im";
 import { FcBookmark } from "react-icons/fc";
 import { StyledTopBook } from "./TopBook.styled";
@@ -6,7 +6,6 @@ import "react-tippy/dist/tippy.css";
 import { Tooltip } from "react-tippy";
 import { addDoc, collection } from "firebase/firestore";
 import { auth, db } from "../../firebase/firebase-config";
-import { colors } from "./Colors";
 
 function TopBook(props) {
   const [clicked, setClicked] = useState(false);
@@ -31,13 +30,7 @@ function TopBook(props) {
   return (
     <Tooltip title={props.description}>
       <StyledTopBook>
-        <h1
-        // style={{
-        //   color: `${colors[Math.floor(Math.random() * colors.length)]}`,
-        // }}
-        >
-          {props.index + 1}
-        </h1>
+        <h1>{props.index + 1}</h1>
         <div className="book col">
           <span>
             {clicked ? (

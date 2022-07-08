@@ -6,10 +6,10 @@ import BookmarkCard from "../bookmark-card/BookmarkCard";
 
 function BookmarkInfo() {
   const [bookList, setBookList] = useState([]);
-  const postsCollectionRef = collection(db, "bookmarks");
-  const q = query(postsCollectionRef);
 
   useEffect(() => {
+    const postsCollectionRef = collection(db, "bookmarks");
+    const q = query(postsCollectionRef);
     onSnapshot(q, (snapshot) => {
       const books = snapshot.docs.map((doc) => ({
         id: doc.id,

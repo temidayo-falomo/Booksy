@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledFeedCard = styled.div`
   position: relative;
   min-height: 300px;
-  width: 430px;
+  width: 400px;
   border: 2px black solid;
   padding: 20px;
   border-radius: 16px;

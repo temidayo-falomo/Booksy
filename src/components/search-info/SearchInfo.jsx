@@ -4,7 +4,7 @@ import SearchCard from "../search-card/SearchCard";
 import { StyledSearchInfo } from "./SearchInfo.styled";
 
 function SearchInfo() {
-  const { searchList, setMaxResults, maxResults } = useContext(AppContext);
+  const { searchList, setMaxResults } = useContext(AppContext);
 
   return (
     <div style={{ display: "flex", width: "100%", flexDirection: "column" }}>

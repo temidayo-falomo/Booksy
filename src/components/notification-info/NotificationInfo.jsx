@@ -2,7 +2,6 @@ import { collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../../firebase/firebase-config";
 import { StyledNotificationInfo } from "./NotificationInfo.styled";
-import { AiFillCheckCircle } from "react-icons/ai";
 import { MdOutlineToday } from "react-icons/md";
 
 function NotificationInfo() {

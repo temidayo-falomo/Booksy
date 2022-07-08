@@ -9,28 +9,25 @@ export const StyledMyTimelineInfo = styled.div`
   gap: 1rem;
   flex-wrap: wrap;
   align-content: flex-start;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   .add-btn {
     font-size: 3rem;
     position: fixed;
-    bottom: 5rem;
     cursor: pointer;
-    left: 50%;
-transform: translateX(-50%);
-margin: auto;
+    left: 8%;
+    bottom: 5%;
+    color: #e75c62;
   }
 
   .pf-abs {
     position: fixed;
-    bottom: 7rem;
     width: 400px;
-    min-height: 400px;
+    min-height: 450px;
     z-index: 999;
     display: flex;
     align-items: center;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: auto;
+    left: 8%;
+    bottom: 10%;
   }
 `;

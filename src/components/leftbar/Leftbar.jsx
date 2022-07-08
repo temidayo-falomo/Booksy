@@ -19,7 +19,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { GrFormClose } from "react-icons/gr";
 
 function Leftbar() {
-  const { isAuth, setIsAuth } = useContext(AppContext);
+  const { setIsAuth } = useContext(AppContext);
   const [click, setClick] = useState(false);
 
   let navigate = useNavigate();

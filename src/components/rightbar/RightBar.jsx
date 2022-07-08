@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import FriendsRecommendations from "../friends-recommendations/FriendsRecommendations";
 import { StyledRightBar } from "./RightBar.styled";
-import { BsChevronDoubleDown } from "react-icons/bs";
 
 function RightBar() {
   const [recommendationsLoading, setRecommendationsLoading] = useState(true);

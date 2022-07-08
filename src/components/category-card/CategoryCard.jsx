@@ -1,5 +1,5 @@
 import { addDoc, collection } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FcBookmark } from "react-icons/fc";
 import { GrCircleAlert } from "react-icons/gr";
 import { ImBookmark } from "react-icons/im";

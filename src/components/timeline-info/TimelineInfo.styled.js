@@ -8,7 +8,6 @@ export const StyledMyTimelineInfo = styled.div`
   gap: 1rem;
   flex-wrap: wrap;
   align-content: flex-start;
-  /* justify-content: space-between; */
 
   .add-btn {
     font-size: 3rem;
@@ -27,6 +26,6 @@ export const StyledMyTimelineInfo = styled.div`
     display: flex;
     align-items: center;
     left: 8%;
-    bottom: 10%;
+    bottom: 12%;
   }
 `;

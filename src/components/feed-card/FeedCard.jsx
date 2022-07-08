@@ -17,7 +17,6 @@ function FeedCard(props) {
 
   const incCount = async (id, likeCount) => {
     const userDoc = doc(db, "posts", id);
-    console.log(likeCount);
     const newCount = { likeCount: likeCount + 1 };
     await updateDoc(userDoc, newCount);
     setClick(!click);
@@ -26,10 +25,7 @@ function FeedCard(props) {
   const decCount = async (id, likeCount) => {
     setClick(!click);
     if (likeCount < 0) {
-      return 0;
-    }
-    if (likeCount > 1) {
-      return 1;
+      // return likeCount === 0
     }
     const userDoc = doc(db, "posts", id);
     const newCount = { likeCount: likeCount - 1 };
@@ -71,7 +67,7 @@ function FeedCard(props) {
       {click ? (
         <button
           className="like rw"
-          onClick={() => decCount(props.id, props.likeCount)}
+          // onClick={() => decCount(props.id, props.likeCount)}
         >
           <FcLike />
           {props.likeCount}

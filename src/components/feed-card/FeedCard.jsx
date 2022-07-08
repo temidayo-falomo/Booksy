@@ -22,15 +22,15 @@ function FeedCard(props) {
     setClick(!click);
   };
 
-  const decCount = async (id, likeCount) => {
-    setClick(!click);
-    if (likeCount < 0) {
-      // return likeCount === 0
-    }
-    const userDoc = doc(db, "posts", id);
-    const newCount = { likeCount: likeCount - 1 };
-    await updateDoc(userDoc, newCount);
-  };
+  // const decCount = async (id, likeCount) => {
+  //   setClick(!click);
+  //   if (likeCount < 0) {
+  //     // return likeCount === 0
+  //   }
+  //   const userDoc = doc(db, "posts", id);
+  //   const newCount = { likeCount: likeCount - 1 };
+  //   await updateDoc(userDoc, newCount);
+  // };
 
   return (
     <StyledFeedCard className="col">

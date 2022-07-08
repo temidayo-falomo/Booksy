@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const StyledFriendsRecommendations = styled.div`
   background-color: #f0f4ff;
-  height: 90vh;
+  height: 92vh;
   padding: 20px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border-top-left-radius: 30px;
   gap: 1rem;
   overflow: auto;
   border-top: 2px #f0f4ff solid;
+  padding-bottom: 2rem;
   ::-webkit-scrollbar {
     width: 0 !important;
   }

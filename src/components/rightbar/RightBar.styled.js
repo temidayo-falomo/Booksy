@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledRightBar = styled.div`
 
+
   h2 {
     padding: 20px;
   }

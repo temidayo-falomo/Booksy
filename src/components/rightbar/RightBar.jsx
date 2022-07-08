@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FriendsRecommendations from "../friends-recommendations/FriendsRecommendations";
+import TopRight from "../top-right/TopRight";
 import { StyledRightBar } from "./RightBar.styled";
 
 function RightBar() {
@@ -8,9 +9,10 @@ function RightBar() {
 
   return (
     <StyledRightBar className={hideDrop ? "showDrop" : "hideDrop"}>
-      <div className="row">
+      {/* <div className="row">
         <h2>Online Users</h2>
-      </div>
+      </div> */}
+      <TopRight />
       <FriendsRecommendations
         setRecommendationsLoading={setRecommendationsLoading}
         recommendationsLoading={recommendationsLoading}

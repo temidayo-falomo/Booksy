@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMyTimeline = styled.div`
-  /* border: 2px royalblue solid; */
+  overflow-y: auto;
+  min-height: 100vh !important;
+  padding-bottom: 2rem;
 `;

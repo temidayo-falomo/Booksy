@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledMyTimelineInfo = styled.div`
   position: relative;
-  height: 90vh;
   padding: 0 20px;
   overflow-x: hidden;
   overflow-y: auto;

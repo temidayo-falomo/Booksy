@@ -15,6 +15,7 @@ export const StyledPostFeedCard = styled.form`
     font-weight: 600;
     border: none;
     border-bottom: 1px gainsboro solid;
+    border-radius: 5px;
   }
 
   textarea {
@@ -23,6 +24,8 @@ export const StyledPostFeedCard = styled.form`
     width: 100% !important;
     height: 8rem !important;
     border: none;
+    font-weight: 600;
+    border-radius: 5px;
   }
 
   button {

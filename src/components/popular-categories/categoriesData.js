@@ -1,6 +1,6 @@
 export const Categories = [
   {
-    name: "Action",
+    name: "Adult",
     img: "./assets/icons/ps_gun.svg",
   },
   {
@@ -33,6 +33,14 @@ export const Categories = [
   },
   {
     name: "Fantasy",
+    img: "./assets/icons/thriller.svg",
+  },
+  {
+    name: "Religion",
+    img: "./assets/icons/thriller.svg",
+  },
+  {
+    name: "Manga",
     img: "./assets/icons/thriller.svg",
   },
 ];

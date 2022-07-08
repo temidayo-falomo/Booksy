@@ -32,6 +32,7 @@ export const StyledBar = styled.div`
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    position: static;
 
     input {
       width: 100%;
@@ -39,7 +40,7 @@ export const StyledBar = styled.div`
   }
 
   @media (max-width: 500px) {
-    position: relative;
+    position: static;
     margin-top: 7rem;
   }
 `;

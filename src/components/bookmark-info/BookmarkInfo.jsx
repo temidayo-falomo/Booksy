@@ -1,5 +1,5 @@
-import { collection, getDocs, onSnapshot, query } from "firebase/firestore";
-import React, { useContext, useEffect, useState } from "react";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import { StyledBookmarkInfo } from "./BookmarkInfo.styled";
 import { auth, db } from "../../firebase/firebase-config";
 import BookmarkCard from "../bookmark-card/BookmarkCard";

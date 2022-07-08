@@ -16,7 +16,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [fictionBooksArray, setFictionBooksArray] = useState([]);
   const [categoriesArray, setCategoriesArray] = useState([]);
-  const [subject, setSubject] = useState("Action");
+  const [subject, setSubject] = useState("Adult");
   const [hydratedSubject, setHydratedSubject] = useState("");
   const [bookmarkedCards, setBookMarkedCards] = useState([]);
   const [hydratedBookmarkedCards, setHydratedBookmarkedCards] = useState([]);
@@ -47,8 +47,6 @@ function App() {
       .catch();
     setHydratedSubject(subject);
   }, [subject]);
-
-  console.log(categoriesArray);
 
   useEffect(() => {
     Axios.get(

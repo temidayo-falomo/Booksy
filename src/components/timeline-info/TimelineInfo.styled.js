@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledMyTimelineInfo = styled.div`
-position: relative;
+  position: relative;
   height: 90vh;
   padding: 0 20px;
   overflow-x: hidden;
@@ -16,17 +16,21 @@ position: relative;
     position: fixed;
     bottom: 5rem;
     cursor: pointer;
+    left: 50%;
+transform: translateX(-50%);
+margin: auto;
   }
 
   .pf-abs {
     position: fixed;
-    bottom: 10rem;
-    width:400px;
+    bottom: 7rem;
+    width: 400px;
     min-height: 400px;
-    margin: 0 auto;
     z-index: 999;
     display: flex;
     align-items: center;
-    border: 2px aliceblue solid;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
   }
 `;

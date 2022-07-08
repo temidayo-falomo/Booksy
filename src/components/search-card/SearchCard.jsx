@@ -15,6 +15,7 @@ function SearchCard(props) {
   let descInfo = props.volumeInfo && props.volumeInfo.description;
   let bookTitle = props.volumeInfo && props.volumeInfo.title;
   let authorName = props.volumeInfo && props.volumeInfo.authors;
+  let releaseDate = props.volumeInfo && props.volumeInfo.publishedDate;
 
   const postsCollectionRef = collection(db, "bookmarks");
 
@@ -68,7 +69,7 @@ function SearchCard(props) {
               There is currently no information on this book...
             </p>
           )}
-          <p>Release Date: 2020</p>
+          <p>Published: {releaseDate !== undefined ? releaseDate : "NA"}</p>
         </div>
       </StyledSearchCard>
     </>

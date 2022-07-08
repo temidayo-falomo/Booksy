@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const StyledFeedCard = styled.div`
-position: relative;
+  position: relative;
   min-height: 300px;
-  width: 450px;
+  width: 430px;
   border: 2px black solid;
   padding: 20px;
   border-radius: 16px;
@@ -13,12 +13,40 @@ position: relative;
   border: 1px solid rgba(3, 37, 236, 0.3);
   gap: 1rem;
 
+  h3 {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  p {
+    font-weight: 300;
+  }
+
   img {
     width: 50px;
   }
 
   .row {
-    gap: .5rem;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .rw {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999999;
+  }
+
+  .cl {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
   }
 
   .like {
@@ -29,5 +57,14 @@ position: relative;
     font-size: 1.2rem;
     display: inline-flex;
     align-items: center;
+  }
+
+  button {
+    background-color: transparent;
+  }
+
+  img {
+    border-radius: 50%;
+    border: 2px #E75C62 solid;
   }
 `;

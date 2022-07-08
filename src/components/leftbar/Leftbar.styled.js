@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledLeftbar = styled.div`
+export const StyledLeftbar = styled.aside`
   height: 100vh;
   padding: 2%;
   align-items: center;

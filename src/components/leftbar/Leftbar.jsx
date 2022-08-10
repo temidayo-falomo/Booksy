@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { StyledLeftbar } from "./Leftbar.styled";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase-config";
 import { AppContext } from "../../helper/Context";
 import { signOut } from "firebase/auth";
@@ -49,46 +49,61 @@ function Leftbar() {
         <ul className="icons col">
           <li>
             <Tooltip title="Dashboard">
-              <Link to="/">
-                <RiDashboardFill />
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                <RiDashboardFill className="icon" />
                 <span>Dashboard</span>
-              </Link>
+              </NavLink>
             </Tooltip>
           </li>
 
           <li>
             <Tooltip title="Bookmarks">
-              <Link to="/bookmarks">
-                <RiBookmarkLine />
+              <NavLink
+                to="/bookmarks"
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                <RiBookmarkLine className="icon" />
                 <span>Bookmarks</span>
-              </Link>
+              </NavLink>
             </Tooltip>
           </li>
 
           <li>
             <Tooltip title="Notifications">
-              <Link to="/notifications">
-                <RiNotification2Line />
+              <NavLink
+                to="/notifications"
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                <RiNotification2Line className="icon" />
                 <span>Notifications</span>
-              </Link>
+              </NavLink>
             </Tooltip>
           </li>
 
           <li>
             <Tooltip title="Explore">
-              <Link to="/explore">
-                <MdOutlineExplore />
+              <NavLink
+                to="/explore"
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                <MdOutlineExplore className="icon" />
                 <span>Explore</span>
-              </Link>
+              </NavLink>
             </Tooltip>
           </li>
 
           <li>
             <Tooltip title="Timeline">
-              <Link to="/timeline">
-                <SiApostrophe />
+              <NavLink
+                to="/timeline"
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                <SiApostrophe className="icon" />
                 <span>Timeline</span>
-              </Link>
+              </NavLink>
             </Tooltip>
           </li>
         </ul>

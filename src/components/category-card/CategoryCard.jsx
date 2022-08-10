@@ -1,13 +1,15 @@
 import { addDoc, collection } from "firebase/firestore";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FcBookmark } from "react-icons/fc";
 import { GrCircleAlert } from "react-icons/gr";
 import { ImBookmark } from "react-icons/im";
 import { auth, db } from "../../firebase/firebase-config";
+import { AppContext } from "../../helper/Context";
 
 function CategoryCard(props) {
   const [clicked, setClicked] = useState(false);
   const [readMore, setReadMore] = useState(false);
+  const { bookList, setBookList, categoriesArray } = useContext(AppContext);
 
   let descInfo = props.volumeInfo && props.volumeInfo.description;
   let thumbnailer =
@@ -24,19 +26,21 @@ function CategoryCard(props) {
       author: props.volumeInfo.authors,
       img: thumbnailer,
       desc: descInfo,
-      user: { name: currentUser, id: currentUserId },
+     user: currentUserId,
     };
 
     await addDoc(postsCollectionRef, newBookmark);
     setClicked(!clicked);
   };
 
+  const removeBookmark = async () => {};
+
   if (thumbnailer !== undefined) {
     return (
       <div className="category-card row" data-aos="fade-up">
         <span className="bkm">
-          {clicked ? (
-            <FcBookmark className="bookm" />
+          {bookList.some((e) => e.name === props.volumeInfo.title) ? (
+            <FcBookmark className="bookm" onClick={removeBookmark} />
           ) : (
             <ImBookmark className="bookmark" onClick={createBoookmark} />
           )}

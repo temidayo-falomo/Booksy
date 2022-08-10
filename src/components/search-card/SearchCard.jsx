@@ -1,17 +1,19 @@
 import { addDoc, collection } from "firebase/firestore";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FcBookmark } from "react-icons/fc";
 import { GrCircleAlert } from "react-icons/gr";
 import { ImBookmark } from "react-icons/im";
 import { auth, db } from "../../firebase/firebase-config";
+import { AppContext } from "../../helper/Context";
 import { StyledSearchCard } from "./SearchCard.styledd";
 
 function SearchCard(props) {
   const [readMore, setReadMore] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const { bookList, setBookList, categoriesArray } = useContext(AppContext);
+
   let thumbnailer =
     props.volumeInfo.imageLinks && props.volumeInfo.imageLinks.thumbnail;
-
   let descInfo = props.volumeInfo && props.volumeInfo.description;
   let bookTitle = props.volumeInfo && props.volumeInfo.title;
   let authorName = props.volumeInfo && props.volumeInfo.authors;
@@ -28,19 +30,21 @@ function SearchCard(props) {
       author: props.volumeInfo.authors,
       img: thumbnailer,
       desc: descInfo,
-      user: { name: currentUser, id: currentUserId },
+      user: currentUserId,
     };
 
     await addDoc(postsCollectionRef, newBookmark);
     setClicked(!clicked);
   };
 
+  const removeBookmark = async () => {};
+
   return (
     <>
       <StyledSearchCard className="row">
         <span className="bkm">
-          {clicked ? (
-            <FcBookmark className="bookm" />
+          {bookList.some((e) => e.name === props.volumeInfo.title) ? (
+            <FcBookmark className="bookm" onClick={removeBookmark} />
           ) : (
             <ImBookmark className="bookmark" onClick={createBoookmark} />
           )}

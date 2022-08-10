@@ -10,6 +10,8 @@ import Bookmarks from "./pages/bookmarks/Bookmarks";
 import Explore from "./pages/explore/Explore";
 import LoadingPage from "./pages/loading-page/LoadingPage";
 import Timeline from "./pages/timeline/Timeline";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { auth, db } from "./firebase/firebase-config";
 
 function App() {
   const [searchList, setSearchList] = useState([]);
@@ -24,6 +26,11 @@ function App() {
   const [apiLoading, setApiLoading] = useState(true);
   const [maxResults, setMaxResults] = useState(12);
   const [visibleCategoryBooks, setVisibleCategoryBooks] = useState(4);
+  const [bookList, setBookList] = useState([]);
+
+  let currentUser = auth.currentUser && auth.currentUser.displayName;
+  let currentUserId = auth.currentUser && auth.currentUser.uid;
+  // console.log(currentUserId);
 
   useEffect(() => {
     Axios.get(
@@ -44,7 +51,7 @@ function App() {
       .then((res) => {
         setCategoriesArray(res.data.items);
       })
-      .catch();
+      .catch(err=> console.log(err));
     setHydratedSubject(subject);
   }, [subject]);
 
@@ -55,16 +62,25 @@ function App() {
       .then((res) => {
         setSearchList(res.data.items);
       })
-      .catch();
+      .catch(err=> console.log(err));
   }, [searchTerm, maxResults]);
 
+  const colRef = collection(db, "bookmarks");
+  // queries
+  const q = query(colRef, where("user", "==", currentUserId));
+  // realtime collection data
+  onSnapshot(q, (snapshot) => {
+    let books = [];
+    snapshot.docs.forEach((doc) => {
+      books.push({ ...doc.data(), id: doc.id });
+    });
+    setBookList(books);
+  });
+
+  //Loading Screen
   if (apiLoading) {
     return <LoadingPage />;
   }
-
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [searchTerm]);
 
   return (
     <AppContext.Provider
@@ -88,6 +104,8 @@ function App() {
         setMaxResults,
         visibleCategoryBooks,
         setVisibleCategoryBooks,
+        bookList,
+        setBookList,
       }}
     >
       <div className="App">

@@ -11,6 +11,16 @@ export const StyledLeftbar = styled.aside`
   padding-bottom: 4rem;
   border-right: 2px #f0f4ff solid;
 
+  .icon {
+    color: var(--dark-blue);
+    fill:  var(--dark-blue);
+  }
+
+  .active-link .icon {
+    color: #e75c62 !important;
+    fill: #e75c62 !important;
+  }
+
   .logo-div {
     margin-bottom: 50px;
     max-width: 50px;

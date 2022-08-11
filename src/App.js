@@ -28,9 +28,9 @@ function App() {
   const [visibleCategoryBooks, setVisibleCategoryBooks] = useState(4);
   const [bookList, setBookList] = useState([]);
 
-  let currentUser = auth.currentUser && auth.currentUser.displayName;
   let currentUserId = auth.currentUser && auth.currentUser.uid;
-  // console.log(currentUserId);
+
+  //Get Trending Books
 
   useEffect(() => {
     Axios.get(
@@ -43,6 +43,7 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
+  //Getting categories
   useEffect(() => {
     Axios.get(
       `https://www.googleapis.com/books/v1/volumes?q=business+subject:${subject}
@@ -51,10 +52,11 @@ function App() {
       .then((res) => {
         setCategoriesArray(res.data.items);
       })
-      .catch(err=> console.log(err));
+      .catch((err) => console.log(err));
     setHydratedSubject(subject);
   }, [subject]);
 
+  //Get search cards
   useEffect(() => {
     Axios.get(
       `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=${maxResults}&key=AIzaSyDDwLWhfPGhaLnooQRSNrMSI5qVh3QUEzU`
@@ -62,9 +64,10 @@ function App() {
       .then((res) => {
         setSearchList(res.data.items);
       })
-      .catch(err=> console.log(err));
+      .catch((err) => console.log(err));
   }, [searchTerm, maxResults]);
 
+  //Get Bookmarks
   const colRef = collection(db, "bookmarks");
   // queries
   const q = query(colRef, where("user", "==", currentUserId));

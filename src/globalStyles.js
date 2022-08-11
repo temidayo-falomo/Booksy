@@ -76,15 +76,30 @@ const GlobalStyle = createGlobalStyle`
   -webkit-box-shadow: inset 0 0 6px rgba(113, 112, 112, 0.3);
    }
 
-::-webkit-scrollbar-thumb {
-/* From https://css.glass */
-background: #0D266B;
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-}
+  ::-webkit-scrollbar-thumb {
+  /* From https://css.glass */
+  background: #0D266B;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .search-show-more {
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: #1DC0FF;
+    color: #fff;
+  }
+
+  .search-show-more:hover {
+    background-color: white;
+    border: 1px #1DC0FF solid;
+    color: #1DC0FF;
+  }
+
 
 
 `;

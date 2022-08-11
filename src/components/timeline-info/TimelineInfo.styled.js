@@ -4,7 +4,6 @@ export const StyledMyTimelineInfo = styled.div`
   position: relative;
   padding: 0 20px;
   overflow-x: hidden;
-  overflow-y: auto;
   gap: 1rem;
   flex-wrap: wrap;
   align-content: flex-start;

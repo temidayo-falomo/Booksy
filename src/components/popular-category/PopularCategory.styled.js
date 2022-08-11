@@ -41,8 +41,7 @@ export const StyledPopularCategory = styled.div`
   }
 
   .category-card p {
-    font-weight: 200;
-    font-size: 0.9rem;
+    font-weight: 300;
   }
 
   .category-card button {
@@ -72,6 +71,12 @@ export const StyledPopularCategory = styled.div`
     color: #fff;
     background-color: #1bc1ff;
     border-top-right-radius: 10px;
+  }
+
+  .view-more-category:hover {
+    background-color: #fff;
+    color: #1bc1ff;
+    border: 1px #1bc1ff solid;
   }
 
   @media (max-width: 900px) {

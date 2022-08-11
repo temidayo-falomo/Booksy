@@ -37,6 +37,10 @@ export const StyledFeedCard = styled.div`
     justify-content: space-between;
   }
 
+  .row:nth-of-type(1) {
+    flex-wrap: wrap;
+  }
+
   .rw {
     display: inline-flex;
     align-items: center;
@@ -47,7 +51,7 @@ export const StyledFeedCard = styled.div`
   .cl {
     display: flex;
     flex-direction: column;
-    gap: .2rem;
+    gap: 0.2rem;
   }
 
   .like {
@@ -66,6 +70,6 @@ export const StyledFeedCard = styled.div`
 
   img {
     border-radius: 50%;
-    border: 2px #E75C62 solid;
+    border: 2px #e75c62 solid;
   }
 `;

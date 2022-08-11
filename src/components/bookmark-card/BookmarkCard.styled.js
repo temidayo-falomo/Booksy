@@ -8,17 +8,20 @@ export const StyledBookmarkCard = styled.div`
   gap: 1rem;
   position: relative;
 
+  span {
+    color: #787a80;
+  }
 
   .col {
-    gap: .5rem;
+    gap: 0.5rem;
   }
 
   .bookm {
     position: absolute;
-    top: .5rem;
-    right: .5rem;
+    top: 0.5rem;
+    right: 0.5rem;
     font-size: 2.5rem;
     cursor: pointer;
     fill: red;
   }
-`
+`;

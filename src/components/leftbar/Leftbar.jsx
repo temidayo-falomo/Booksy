@@ -6,6 +6,7 @@ import { AppContext } from "../../helper/Context";
 import { signOut } from "firebase/auth";
 import "react-tippy/dist/tippy.css";
 import { Tooltip } from "react-tippy";
+import { BiNotification } from "react-icons/bi";
 
 import {
   RiDashboardFill,
@@ -77,7 +78,7 @@ function Leftbar() {
                 to="/notifications"
                 className={({ isActive }) => (isActive ? "active-link" : "")}
               >
-                <RiNotification2Line className="icon" />
+                <BiNotification className="icon" />
                 <span>Notifications</span>
               </NavLink>
             </Tooltip>

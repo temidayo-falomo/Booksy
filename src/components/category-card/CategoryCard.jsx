@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { FcBookmark } from "react-icons/fc";
 import { GrCircleAlert } from "react-icons/gr";
@@ -26,21 +26,29 @@ function CategoryCard(props) {
       author: props.volumeInfo.authors,
       img: thumbnailer,
       desc: descInfo,
-     user: currentUserId,
+      user: currentUserId,
     };
 
     await addDoc(postsCollectionRef, newBookmark);
     setClicked(!clicked);
   };
 
-  const removeBookmark = async () => {};
+  const removeBookmark = async (param) => {
+    // const postDoc = doc(db, "bookmarks", param);
+    // await deleteDoc(postDoc);
+  };
+
+  //styling is in parent component.
 
   if (thumbnailer !== undefined) {
     return (
       <div className="category-card row" data-aos="fade-up">
         <span className="bkm">
           {bookList.some((e) => e.name === props.volumeInfo.title) ? (
-            <FcBookmark className="bookm" onClick={removeBookmark} />
+            <FcBookmark
+              className="bookm"
+              onClick={() => removeBookmark(props.id)}
+            />
           ) : (
             <ImBookmark className="bookmark" onClick={createBoookmark} />
           )}

@@ -24,7 +24,7 @@ function FriendsRecommendations(props) {
         <div className="lds-hourglass"></div>
       ) : (
         <>
-          <h4>Booksy's Weekly Recommendations ❤️</h4>
+          <h4>Booksy's Weekly Recommendations <div className="circle">{recommendations.length}</div></h4>
           {recommendations.map((rec, index) => {
             return (
               <div className="recommendation-card col" key={index}>

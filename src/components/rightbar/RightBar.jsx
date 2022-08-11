@@ -9,9 +9,6 @@ function RightBar() {
 
   return (
     <StyledRightBar className={hideDrop ? "showDrop" : "hideDrop"}>
-      {/* <div className="row">
-        <h2>Online Users</h2>
-      </div> */}
       <TopRight />
       <FriendsRecommendations
         setRecommendationsLoading={setRecommendationsLoading}

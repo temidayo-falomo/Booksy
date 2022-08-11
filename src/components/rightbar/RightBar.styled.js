@@ -8,7 +8,7 @@ export const StyledRightBar = styled.div`
   }
 
   p {
-    font-weight: 200;
+    font-weight: 300;
   }
 
   .down {

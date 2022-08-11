@@ -34,12 +34,7 @@ function SignUpCard(props) {
       </div>
 
       <div className="card-text">
-        <p>
-          To create your account, Google will share your name, email address,
-          and profile picture with <span>BOOKSY</span>. Learn more about
-          Google's <a href="/">Terms of Service</a> and{" "}
-          <a href="/">Privacy Policy</a>.{" "}
-        </p>
+        <p>This is a one-time, password-less login, so you don't need a password.</p>
       </div>
     </StyledCard>
   );

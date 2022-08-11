@@ -8,7 +8,10 @@ function SearchInfo() {
 
   return (
     <div style={{ display: "flex", width: "100%", flexDirection: "column" }}>
-      <h4 style={{ padding: "20px" }}>Results</h4>
+      <h4 style={{ padding: "0 20px", fontSize: "1.2rem" }}>
+        {" "}
+        {"Search Results >>"}
+      </h4>
       <StyledSearchInfo>
         {searchList.map((term, index) => {
           return <SearchCard key={term.id} {...term} />;
@@ -18,11 +21,10 @@ function SearchInfo() {
         style={{
           margin: "1rem auto",
           alignSelf: "center",
-          width: "300px",
-          padding: "20px",
-          background: "#1DC0FF",
-          color: "white",
+          width: "250px",
+          padding: "10px",
         }}
+        className="search-show-more"
         onClick={() => setMaxResults((prev) => prev + 5)}
       >
         Load More Results

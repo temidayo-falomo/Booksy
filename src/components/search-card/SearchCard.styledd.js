@@ -28,14 +28,17 @@ export const StyledSearchCard = styled.div`
   }
 
   p {
-    font-weight: 200;
-    font-size: 0.9rem;
+    font-weight: 300;
   }
 
   button {
     padding: 2px 5px;
     background-color: #1bc1ff;
     color: #fff;
+  }
+
+  span {
+    color: #787a80;
   }
 
   .bkm {

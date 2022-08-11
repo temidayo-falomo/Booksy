@@ -10,13 +10,19 @@ export const StyledLeftbar = styled.aside`
   background-color: #fff;
   padding-bottom: 4rem;
   border-right: 2px #f0f4ff solid;
+  overflow: auto;
 
   .icon {
     color: var(--dark-blue);
-    fill:  var(--dark-blue);
+    fill: var(--dark-blue);
   }
 
   .active-link .icon {
+    color: #e75c62 !important;
+    fill: #e75c62 !important;
+  }
+
+  .active-link {
     color: #e75c62 !important;
     fill: #e75c62 !important;
   }
@@ -125,7 +131,8 @@ export const StyledLeftbar = styled.aside`
       padding-left: 20px;
       align-items: flex-start;
       justify-content: flex-start;
-      margin-top: 3rem;
+      margin-top: 20%;
+      margin-bottom: 1rem;
     }
 
     .username {

@@ -15,11 +15,32 @@ export const StyledFriendsRecommendations = styled.div`
   }
 
   h4 {
-    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1c1c1c;
+    text-transform: uppercase;
+  }
+
+  span {
+    font-size: 0.9rem;
+  }
+
+  .row {
+    margin-bottom: 0.5rem;
   }
 
   .col {
-    gap: 0.5rem;
+    gap: 0.3rem;
   }
 
   .recommendation-card {
@@ -34,13 +55,19 @@ export const StyledFriendsRecommendations = styled.div`
     gap: 0.5rem;
   }
 
-  .bdr img {
-    width: 60px;
+  .bdr {
+    width: 70px;
+    height: 75px;
     border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .lds-hourglass {
@@ -62,6 +89,18 @@ export const StyledFriendsRecommendations = styled.div`
     border-color: #1dc0ff transparent #1dc0ff transparent;
     animation: lds-hourglass 1.2s infinite;
   }
+
+  .circle {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #e75c62;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-content: center;
+  }
+
   @keyframes lds-hourglass {
     0% {
       transform: rotate(0);

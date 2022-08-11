@@ -1,6 +1,7 @@
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { AiFillPlusCircle } from "react-icons/ai";
+import { MdCancel } from "react-icons/md";
 import { db } from "../../firebase/firebase-config";
 import FeedCard from "../feed-card/FeedCard";
 import PostFeedCard from "../postFeed-card/PostFeedCard";
@@ -36,7 +37,11 @@ function TimelineInfo() {
       {feedList.map((feedItem, index) => {
         return <FeedCard key={index} {...feedItem} />;
       })}
-      <AiFillPlusCircle className="add-btn" onClick={togglePostCard} />
+      {!clicked ? (
+        <AiFillPlusCircle className="add-btn" onClick={togglePostCard} />
+      ) : (
+        <MdCancel className="add-btn" onClick={togglePostCard} />
+      )}
     </StyledMyTimelineInfo>
   );
 }

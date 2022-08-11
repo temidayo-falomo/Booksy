@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledPostFeedCard = styled.form`
   width: 100%;
   max-width: 320px;
-  min-height: 450px;
+  min-height: 400px;
   padding: 20px;
   border-radius: 10px;
   gap: 1rem;

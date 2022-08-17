@@ -10,7 +10,7 @@ import { StyledSearchCard } from "./SearchCard.styledd";
 function SearchCard(props) {
   const [readMore, setReadMore] = useState(false);
   const [clicked, setClicked] = useState(false);
-  const { bookList } = useContext(AppContext);
+  const { bookList, setBookList, categoriesArray } = useContext(AppContext);
 
   let thumbnailer =
     props.volumeInfo.imageLinks && props.volumeInfo.imageLinks.thumbnail;
@@ -22,6 +22,7 @@ function SearchCard(props) {
   const postsCollectionRef = collection(db, "bookmarks");
 
   const createBoookmark = async () => {
+    let currentUser = auth.currentUser.displayName;
     let currentUserId = auth.currentUser.uid;
 
     const newBookmark = {

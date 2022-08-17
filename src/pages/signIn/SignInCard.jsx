@@ -6,7 +6,7 @@ import { AppContext } from "../../helper/Context";
 import { auth, provider } from "../../firebase/firebase-config";
 import { signInWithPopup } from "firebase/auth";
 
-function SignUpCard(props) {
+function SignUpCard() {
   let navigate = useNavigate();
 
   const { setIsAuth } = useContext(AppContext);

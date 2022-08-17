@@ -56,6 +56,7 @@ export const StyledLeftbar = styled.aside`
 
   .avatar {
     width: 60px;
+    height: 60px;
     border: 4px #e38660 solid;
     border-radius: 50%;
   }

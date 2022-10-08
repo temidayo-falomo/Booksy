@@ -20,7 +20,7 @@ function LandingInfo() {
       <h4 className="top-picks">Our Picks For the Week!</h4>
       <div className="top-part">
         <Carousel breakPoints={breakPoints} className="slider">
-          {fictionBooksArray.slice(0, 10).map((book, index) => {
+          {fictionBooksArray?.slice(0, 10).map((book, index) => {
             return <TopBook key={index} {...book} index={index} />;
           })}
         </Carousel>

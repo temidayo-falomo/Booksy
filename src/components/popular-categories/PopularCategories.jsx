@@ -19,7 +19,7 @@ function PopularCategories() {
     <StyledPopularCategories className="col">
       <h4>Discover Popular Categories</h4>
       <div className="div">
-        {Categories.map((category, index) => {
+        {Categories?.map((category, index) => {
           return (
             <button
               key={index}

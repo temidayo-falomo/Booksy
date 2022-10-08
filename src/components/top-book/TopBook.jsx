@@ -37,7 +37,7 @@ function TopBook(props) {
         <h1>{props.index + 1}</h1>
         <div className="book col">
           <span>
-            {bookList.some((e) => e.name === props.title) ? (
+            {bookList?.some((e) => e.name === props.title) ? (
               <FcBookmark className="bookm" onClick={removeBookmark} />
             ) : (
               <ImBookmark className="bookmark" onClick={createBookmark} />

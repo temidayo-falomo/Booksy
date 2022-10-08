@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { auth } from "../../firebase/firebase-config";
 import { AppContext } from "../../helper/Context";
 import LandingInfo from "../landing-info/LandingInfo";
 import SearchInfo from "../search-info/SearchInfo";
@@ -18,18 +19,20 @@ function MyDashboard() {
   };
 
   return (
-    <StyledMyDashboard>
-      <StyledBar>
-        <h1 id="view">My Dashboard</h1>
-        <input
-          type="search"
-          placeholder="Search book titles, authors, publishers..."
-          onChange={(e) => handleSearch(e)}
-        />
-      </StyledBar>
-      {showSearch && <SearchInfo />}
-      <LandingInfo />
-    </StyledMyDashboard>
+    <>
+      <StyledMyDashboard>
+        <StyledBar>
+          <h1 id="view">My Dashboard</h1>
+          <input
+            type="search"
+            placeholder="Search book titles, authors, publishers..."
+            onChange={(e) => handleSearch(e)}
+          />
+        </StyledBar>
+        {showSearch && <SearchInfo />}
+        {<LandingInfo />}
+      </StyledMyDashboard>
+    </>
   );
 }
 

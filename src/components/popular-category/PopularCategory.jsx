@@ -11,6 +11,7 @@ function PopularCategory() {
     hydratedSubject,
     visibleCategoryBooks,
     setVisibleCategoryBooks,
+    subject,
   } = useContext(AppContext);
 
   const handleExtraBooks = () => {
@@ -19,9 +20,9 @@ function PopularCategory() {
 
   return (
     <StyledPopularCategory className="col">
-      <h3>{hydratedSubject} Books</h3>
-      {categoriesArray.slice(0, visibleCategoryBooks).map((item, index) => {
-        return <CategoryCard key={item.id} {...item} />;
+      <h3>{subject} Books</h3>
+      {categoriesArray?.slice(0, visibleCategoryBooks).map((item, index) => {
+        return <CategoryCard key={index} {...item} />;
       })}
       {visibleCategoryBooks <= 40 ? (
         <button className="view-more-category" onClick={handleExtraBooks}>

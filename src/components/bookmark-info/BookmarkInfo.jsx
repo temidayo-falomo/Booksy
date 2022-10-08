@@ -9,13 +9,9 @@ function BookmarkInfo() {
 
   return (
     <StyledBookmarkInfo>
-      {bookList
-        // .filter(function (item) {
-        //   return item.user.id === auth.currentUser.uid;
-        // })
-        .map((data, index) => {
-          return <BookmarkCard key={index} {...data} index={index} />;
-        })}
+      {bookList?.map((data, index) => {
+        return <BookmarkCard key={index} {...data} index={index} />;
+      })}
     </StyledBookmarkInfo>
   );
 }

@@ -22,8 +22,7 @@ function SearchCard(props) {
   const postsCollectionRef = collection(db, "bookmarks");
 
   const createBoookmark = async () => {
-    let currentUser = auth.currentUser.displayName;
-    let currentUserId = auth.currentUser.uid;
+    let currentUserId = auth.currentUser && auth.currentUser.uid;
 
     const newBookmark = {
       name: props.volumeInfo.title,
@@ -35,6 +34,7 @@ function SearchCard(props) {
 
     await addDoc(postsCollectionRef, newBookmark);
     setClicked(!clicked);
+    console.log('clicked');
   };
 
   const removeBookmark = async () => {};
@@ -43,7 +43,7 @@ function SearchCard(props) {
     <>
       <StyledSearchCard className="row">
         <span className="bkm">
-          {bookList.some((e) => e.name === props.volumeInfo.title) ? (
+          {bookList?.some((e) => e.name === props.volumeInfo.title) ? (
             <FcBookmark className="bookm" onClick={removeBookmark} />
           ) : (
             <ImBookmark className="bookmark" onClick={createBoookmark} />

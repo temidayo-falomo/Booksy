@@ -18,7 +18,6 @@ function CategoryCard(props) {
   const postsCollectionRef = collection(db, "bookmarks");
 
   const createBoookmark = async () => {
-    let currentUser = auth.currentUser.displayName;
     let currentUserId = auth.currentUser.uid;
 
     const newBookmark = {
@@ -44,7 +43,7 @@ function CategoryCard(props) {
     return (
       <div className="category-card row" data-aos="fade-up">
         <span className="bkm">
-          {bookList.some((e) => e.name === props.volumeInfo.title) ? (
+          {bookList?.some((e) => e.name === props.volumeInfo.title) ? (
             <FcBookmark
               className="bookm"
               onClick={() => removeBookmark(props.id)}

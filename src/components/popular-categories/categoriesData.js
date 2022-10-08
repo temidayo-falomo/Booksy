@@ -1,15 +1,15 @@
 export const Categories = [
   {
+    name: "Autobiography",
+    img: "./assets/icons/person.svg",
+  },
+  {
     name: "Adult",
     img: "./assets/icons/ps_gun.svg",
   },
   {
     name: "Adventure",
     img: "./assets/icons/adventure.svg",
-  },
-  {
-    name: "Autobiography",
-    img: "./assets/icons/person.svg",
   },
   {
     name: "Horror",
@@ -33,14 +33,18 @@ export const Categories = [
   },
   {
     name: "Fantasy",
-    img: "./assets/icons/thriller.svg",
+    img: "./assets/icons/adventure.svg",
   },
   {
     name: "Religion",
-    img: "./assets/icons/thriller.svg",
+    img: "./assets/icons/scale.svg",
   },
   {
     name: "Manga",
     img: "./assets/icons/thriller.svg",
+  },
+  {
+    name: "Motivational",
+    img: "./assets/icons/question.svg",
   },
 ];

@@ -15,10 +15,10 @@ import { auth, db } from "./firebase/firebase-config";
 
 function App() {
   const [searchList, setSearchList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("hi");
   const [fictionBooksArray, setFictionBooksArray] = useState([]);
   const [categoriesArray, setCategoriesArray] = useState([]);
-  const [subject, setSubject] = useState("Adult");
+  const [subject, setSubject] = useState("Autobiography");
   const [hydratedSubject, setHydratedSubject] = useState("");
   const [bookmarkedCards, setBookMarkedCards] = useState([]);
   const [hydratedBookmarkedCards, setHydratedBookmarkedCards] = useState([]);
@@ -26,7 +26,7 @@ function App() {
   const [apiLoading, setApiLoading] = useState(true);
   const [maxResults, setMaxResults] = useState(12);
   const [visibleCategoryBooks, setVisibleCategoryBooks] = useState(4);
-  const [bookList, setBookList] = useState([]);
+  const [bookList, setBookList] = useState();
 
   let currentUserId = auth.currentUser && auth.currentUser.uid;
 
@@ -53,7 +53,7 @@ function App() {
         setCategoriesArray(res.data.items);
       })
       .catch((err) => console.log(err));
-    setHydratedSubject(subject);
+    // setHydratedSubject(subject);
   }, [subject]);
 
   //Get search cards
@@ -67,23 +67,42 @@ function App() {
       .catch((err) => console.log(err));
   }, [searchTerm, maxResults]);
 
-  //Get Bookmarks
-  const colRef = collection(db, "bookmarks");
-  // queries
-  const q = query(colRef, where("user", "==", currentUserId));
-  // realtime collection data
-  onSnapshot(q, (snapshot) => {
-    let books = [];
-    snapshot.docs.forEach((doc) => {
-      books.push({ ...doc.data(), id: doc.id });
-    });
-    setBookList(books);
-  });
+  useEffect(() => {
+    //Get Bookmarks
+    const colRef = collection(db, "bookmarks");
+    // queries
+
+    if (auth.currentUser?.uid) {
+      const q = query(colRef, where("user", "==", auth.currentUser?.uid));
+      // realtime collection data
+      onSnapshot(q, (snapshot) => {
+        let books = [];
+        snapshot.docs.forEach((doc) => {
+          books.push({ ...doc.data(), id: doc.id });
+        });
+        setBookList(books);
+      });
+    }
+
+    setTimeout(() => {
+      const q = query(colRef, where("user", "==", auth.currentUser?.uid));
+      // realtime collection data
+      onSnapshot(q, (snapshot) => {
+        let books = [];
+        snapshot.docs.forEach((doc) => {
+          books.push({ ...doc.data(), id: doc.id });
+        });
+        setBookList(books);
+      });
+    }, 3000);
+  }, [apiLoading, auth?.currentUser?.uid]);
 
   //Loading Screen
   if (apiLoading) {
     return <LoadingPage />;
   }
+
+  console.log(subject);
 
   return (
     <AppContext.Provider

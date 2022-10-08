@@ -14,7 +14,7 @@ function Dashboard() {
     if (!localStorage.getItem("username")) {
       navigate("/signin");
     }
-    setSubject("Adult");
+    // setSubject("Autobiography");
   }, []);
 
   return (

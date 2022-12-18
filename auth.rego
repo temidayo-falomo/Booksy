@@ -9,6 +9,6 @@ allow {
   input.request_path = ["v1", "collection"]
   input.company = "Thornton Leon Traders"
   input.request_method = "UPDATE"
-  input.groupname = "everyone"
+  input.groupname = "EDITOR_DBGT"
 }
 

@@ -6,9 +6,9 @@ default allow = false
 
 allow {
   {"name": input.name,"groupname": input.groupname} = data.geostore.usergroup[_]
-  input.request_path = ["v1", "collection"]
-  input.company = "Thornton Leon Traders"
-  input.request_method = "POST"
-  input.groupname = "EDITOR_CITTA_PUBBLICA"
+  input.None = "v1/collection/naira"
+  input.None = "Thornton Leon Traders"
+  input.None = "UPDATE"
+  input.None = "EDITOR_CITTA_PUBBLICA"
 }
 

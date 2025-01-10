@@ -12,6 +12,7 @@ function CategoryCard(props) {
   const { bookList, setBookList, categoriesArray } = useContext(AppContext);
 
   let descInfo = props.volumeInfo && props.volumeInfo.description;
+  
   let thumbnailer =
     props.volumeInfo.imageLinks && props.volumeInfo.imageLinks.thumbnail;
 

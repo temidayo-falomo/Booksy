@@ -4,6 +4,7 @@ import { StyledExploreInfo } from "./ExploreInfo.styled";
 
 function ExploreInfo() {
   let navigate = useNavigate();
+  
   return (
     <StyledExploreInfo>
       <h1>Explore!</h1>

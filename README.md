@@ -7,13 +7,13 @@ Booksy is a Book finder project built mostly using modern libraries and techniqu
 Install my-project with npm
 
 ```bash
-  npm install booksy
-  cd booksy
+  npm install Booksy
+  cd Booksy
 ```
 
-## Tech Stack
+## Tech Stack Used
 
-**Client:** React, React Router, Styled Components
+**Client:** React Js, React Router, Styled Components
 
 **Server:** Firebase
 

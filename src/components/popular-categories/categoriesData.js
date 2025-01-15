@@ -7,6 +7,7 @@ export const Categories = [
     name: "Adult",
     img: "./assets/icons/ps_gun.svg",
   },
+  ///
   {
     name: "Adventure",
     img: "./assets/icons/adventure.svg",

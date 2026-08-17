@@ -14,9 +14,13 @@ function SearchCard(props) {
 
   let thumbnailer =
     props.volumeInfo.imageLinks && props.volumeInfo.imageLinks.thumbnail;
+
   let descInfo = props.volumeInfo && props.volumeInfo.description;
+
   let bookTitle = props.volumeInfo && props.volumeInfo.title;
+
   let authorName = props.volumeInfo && props.volumeInfo.authors;
+  
   let releaseDate = props.volumeInfo && props.volumeInfo.publishedDate;
 
   const postsCollectionRef = collection(db, "bookmarks");

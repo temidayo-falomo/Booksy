@@ -6,7 +6,6 @@ import { StyledBookmarkCard } from "./BookmarkCard.styled";
 import { Tooltip } from "react-tippy";
 
 function BookmarkCard(props) {
-
   const deleteBookmark = async (param) => {
     const postDoc = doc(db, "bookmarks", param);
     await deleteDoc(postDoc);
